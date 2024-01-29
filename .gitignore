@@ -1,3 +1,5 @@
+script/create_tables_completed.txt
 .env
 data/
 script/__pycache__/
+dags/__pycache__/
