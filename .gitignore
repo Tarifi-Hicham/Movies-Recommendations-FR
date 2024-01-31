@@ -3,3 +3,4 @@ script/create_tables_completed.txt
 data/
 script/__pycache__/
 dags/__pycache__/
+stream-processing/checkpoint
