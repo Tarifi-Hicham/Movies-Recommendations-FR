@@ -4,3 +4,4 @@ data/
 script/__pycache__/
 dags/__pycache__/
 stream-processing/checkpoint
+stream-processing/api/__pycache__/
