@@ -6,12 +6,17 @@ from hdfs import InsecureClient
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
+
+# Function to get the index of the last data stored in the data lake 
 def get_last_api_page(client, user_name):
     try:
+        # Get the name of the main directory 
         directory_path = f'/user/{user_name}'
         directories = client.list(directory_path, status=True)
         sorted_directories = sorted(directories, key=lambda x: x[1]['modificationTime'], reverse=True)
         last_directory_date = sorted_directories[0][0]
+
+        # Get the index = page number in the API
         directory_path = f'/user/{user_name}/{last_directory_date}'
         directories = client.list(directory_path, status=True)
         sorted_directories = sorted(directories, key=lambda x: x[1]['modificationTime'], reverse=True)

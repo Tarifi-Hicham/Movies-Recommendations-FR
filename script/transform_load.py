@@ -144,12 +144,12 @@ def insert_data_into_table(table_name, data):
 
 
 # Function to find an element by id
-def find_element_by_id(el_list, type, id):
-    for el in el_list:
-        if type == 'movie' and el['movie_id'] == id:
-            return el
-        elif type == 'actor' and el['actor_id'] == id:
-            return el
+def find_element_by_id(element_list, type, id):
+    for element in element_list:
+        if type == 'movie' and element['movie_id'] == id:
+            return element
+        elif type == 'actor' and element['actor_id'] == id:
+            return element
     return None
 
 # Function to get departement info by name

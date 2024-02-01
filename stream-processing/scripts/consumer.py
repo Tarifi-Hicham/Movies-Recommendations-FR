@@ -276,19 +276,6 @@ query = insert_data(index_name2, reviews_df, "../checkpoint/tmp_reviews","review
 query = movie_df.writeStream.outputMode("append").format("console").start()
 query = reviews_df.writeStream.outputMode("append").format("console").start()
 
-# # Streaming code 
-# query = reviews_df.writeStream \
-# .format("org.elasticsearch.spark.sql") \
-# .outputMode("append") \
-# .option("es.nodes", "localhost") \
-# .option("es.port", "9200") \
-# .option("es.resource", index_name2) \
-# .option("es.mapping.id", "reviewId") \
-# .option("checkpointLocation", "../checkpoint/tmp_reviews") \
-# .option("es.nodes.wan.only", "false") \
-# .option("es.write.operation", "index") \
-# .start()
-
 query.awaitTermination()
 
 print("************************ Saving data done. ************************")
